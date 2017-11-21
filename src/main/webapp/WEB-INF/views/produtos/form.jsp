@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@	taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@	taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,19 +13,32 @@
 </head>
 <body>
 
-	<form method="post" action="/springmvc/produtos">
+
+
+
+	<form:form method="post" action="/springmvc/produtos"
+		commandName="prodcut">
 		<div>
-			<label for="tittle">Titulo</label> <input type="text" name="tittle"
-				id="tittle" />
+			<label for="tittle">Titulo</label>
+			<form:input path="tittle" id="tittle" />
+			<form:errors path="tittle" />
 		</div>
 
 		<div>
 			<label for="description">Descricao</label>
-			<textarea name="description" id="description" cols="20" rows="10"></textarea>
+			<form:textarea path="description" id="description" cols="20"
+				rows="10" />
+			<form:errors path="description" />
 		</div>
 		<div>
 			<label for="pages">Numero de paginas</label> <input type="text"
 				name="pages" id="pages" />
+		</div>
+		
+		<div>
+			<label for="releaseDate">Data de lancamento</label>
+			<form:input path="releaseDate" type="date" />
+			<form:errors path="releaseDate" />
 		</div>
 
 		<c:forEach items="${types}" var="bookType" varStatus="status">
@@ -35,21 +50,18 @@
 			</div>
 		</c:forEach>
 
+		
+
 		<div>
 			<input type="submit" value="Enviar">
 		</div>
-		<spring:hasBindErrors name="prodcut">
-			<ul>
-			<c:forEach var="error" items="${errors.allErrors }">
-				<li>${error.code }</li>
-			</c:forEach>
-			</ul>
-		</spring:hasBindErrors>
+	</form:form>
 
 
 
 
-	</form>
+
+
 
 </body>
 </html>
