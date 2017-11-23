@@ -17,7 +17,7 @@
 
 
 	<form:form method="post" action="/springmvc/produtos"
-		commandName="prodcut">
+		commandName="prodcut" enctype="multipart/form-data">
 		<div>
 			<label for="tittle">Titulo</label>
 			<form:input path="tittle" id="tittle" />
@@ -39,6 +39,13 @@
 			<label for="releaseDate">Data de lancamento</label>
 			<form:input path="releaseDate" type="date" />
 			<form:errors path="releaseDate" />
+		</div>
+		
+		<div>
+			<label for="summary">Sumario do livro</label>
+			<a href="${product.summaryPath }">Sumario</a>
+			<input type="file" name="summary"/>
+			<form:errors path="summaryPath"/>
 		</div>
 
 		<c:forEach items="${types}" var="bookType" varStatus="status">
