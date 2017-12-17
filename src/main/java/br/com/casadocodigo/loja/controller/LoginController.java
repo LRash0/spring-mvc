@@ -17,7 +17,7 @@ public class LoginController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public ModelAndView registration(Model model) {
-	ModelAndView modelAndView = new ModelAndView("auth/registration");
+	ModelAndView modelAndView = new ModelAndView("auth/login");
 	return modelAndView;
     }
 
