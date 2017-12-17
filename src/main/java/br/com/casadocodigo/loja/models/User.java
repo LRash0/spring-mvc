@@ -49,7 +49,7 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
 	// TODO Auto-generated method stub
-	return login;
+	return name;
     }
 
     @Override
@@ -74,6 +74,14 @@ public class User implements UserDetails {
     public boolean isEnabled() {
 	// TODO Auto-generated method stub
 	return true;
+    }
+
+    public String getLogin() {
+	return login;
+    }
+
+    public void setLogin(String login) {
+	this.login = login;
     }
 
 }
