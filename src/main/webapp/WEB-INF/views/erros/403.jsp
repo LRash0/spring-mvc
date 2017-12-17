@@ -4,17 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Bem vindo</title>
+<title>Não autorizado</title>
 </head>
 <body>
-<h1>Bem vindo!</h1>
-
-<a href="springmvc/auth/login">Login</a>
-<a href="springmvc/produtos/">Conferencia</a>
-<a href="springmvc/produtos/form">link text</a>
-
-
-
-
+Você não tem autorização para ver essa página
 </body>
 </html>
