@@ -4,10 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Index</title>
 </head>
 <body>
 <a href="produtos">Lista de produtos</a>
 <a href="produtos/form">Cadastrar produtos</a>
+=======
+<title>Bem vindo</title>
+</head>
+<body>
+<h1>Bem vindo!</h1>
+
+<a href="springmvc/auth/login">Login</a>
+<a href="springmvc/produtos/">Conferencia</a>
+<a href="springmvc/produtos/form">link text</a>
+
+
+
+
+
 </body>
 </html>

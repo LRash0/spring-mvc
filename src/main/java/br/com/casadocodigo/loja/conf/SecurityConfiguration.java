@@ -16,13 +16,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-	http.authorizeRequests().antMatchers("produtos/form").hasRole("ADMIN").anyRequest().authenticated().and()
-		.formLogin();
+	http.authorizeRequests().antMatchers("/produtos/form").hasRole("ADMIN").antMatchers("/").permitAll()
+		.anyRequest().authenticated().and().formLogin().and().logout().and().exceptionHandling()
+		.accessDeniedPage("/WEB-INF/views/erros/403.jsp");
+	// .antMatchers("auth/registration/**").permitAll();
 
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
 	// auth.userDetailsService(users).passwordEncoder(new BCryptPasswordEncoder());
 	auth.inMemoryAuthentication().withUser("admin").password("123").roles("ADMIN");
 	auth.inMemoryAuthentication().withUser("user").password("123").roles("user");
