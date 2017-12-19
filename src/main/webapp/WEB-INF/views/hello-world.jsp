@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+
+<title>Bem vindo</title>
 </head>
 <body>
-
+<a href="produtos">Lista de produtos</a>
+<a href="produtos/form">Cadastrar produtos</a>
 </body>
 </html>

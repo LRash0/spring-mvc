@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -22,8 +23,14 @@ public class User implements UserDetails {
     @Id
     private String login;
     private String password;
+
+    public void setPassword(String password) {
+	this.password = password;
+    }
+
     private String name;
     @ManyToMany(fetch = FetchType.EAGER)
+    @ColumnDefault(value = "ROLE_USER")
     private List<Role> roles = new ArrayList<>();
 
     public String getName() {

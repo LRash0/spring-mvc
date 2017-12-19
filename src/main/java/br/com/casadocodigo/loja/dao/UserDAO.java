@@ -31,4 +31,8 @@ public class UserDAO implements UserDetailsService {
 	return users.get(0);
     }
 
+    public void save(User user) {
+	em.persist(user);
+    }
+
 }
